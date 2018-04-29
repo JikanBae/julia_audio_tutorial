@@ -1,1 +1,3 @@
-# julia_audio_tutorial
+# Julia Audio Tutorial
+
+Juliaを使ってオーディオ・プログラミング。
