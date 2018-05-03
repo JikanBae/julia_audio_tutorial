@@ -1,6 +1,5 @@
 
 using LibSndFile, SampledSignals, Plots
-gr();
 
 snd = load("20180203_electric_bass_open.flac");
 x = snd.data;
