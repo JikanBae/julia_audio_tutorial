@@ -1,5 +1,6 @@
 
 using LibSndFile, SampledSignals, Plots
+pyplot();
 
 snd = load("20180203_electric_bass_open.flac");
 x = snd.data;
@@ -23,8 +24,8 @@ plot(tE1, xE1,
 
 plot(tE1, xE1,
     xlabel="Time (s)", ylabel="Amplitude",
-    xlim=(2.7, 2.9),
-    ylim=(-1, +1),
+    xlim=(2.7, 2.8),
+    ylim=(-0.05, +0.05),
     legend=false)
 
 yE1 = fft(xE1);
