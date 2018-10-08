@@ -4,7 +4,7 @@ import LibSndFile
 using SampledSignals, Plots, FFTW
 pyplot();
 
-snd = load("20180203_electric_bass_open.flac");
+snd = load("electric_bass.flac");
 fs = snd.samplerate;
 x = snd.data;
 
