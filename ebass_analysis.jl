@@ -53,7 +53,7 @@ plot(f, ampspecE1dB .- maximum(ampspecE1dB),
     title="Electric Bass (E1, 41 Hz)", legend=false)
 
 framesize = 2^14;
-framestep = 2^10;
+framestep = convert(Int, fs/15); #2^10;
 Nmax = 2^18;
 
 xx = zeros((length(xE1) + framesize));
@@ -105,3 +105,5 @@ gif(anim, "ebass_15fps.gif", fps=15)
 gif(anim, "ebass_$(round(Int, fs/framestep))fps.gif", fps=round(Int, fs/framestep))
 
 fs/framestep
+
+
