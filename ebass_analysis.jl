@@ -94,10 +94,10 @@ savefig("heatmap.png")
 zmax = 20*log10.(maximum(zz));
 
 anim = @animate for n=1:size(zz, 1)
-    zframe = 20*log10.(zz[n, :]));
+    zframe = 20*log10.(zz[n, :]);
     plot(f, zframe .- zmax,
         xlim=(0, 1500), ylim=(-75, 3),
         xlabel="Frequency (Hz)", ylabel="Power (dB)",
-        title="Electric Bass (E1, 41 Hz)", legend=false)
+        title="Electric Bass (E1, 41 Hz), t=$(round(t[n]*10)/10) sec", legend=false)
 end
 gif(anim, "ebass.gif", fps=15)
