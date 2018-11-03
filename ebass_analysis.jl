@@ -53,7 +53,7 @@ plot(f, ampspecE1dB .- maximum(ampspecE1dB),
     title="Electric Bass (E1, 41 Hz)", legend=false)
 
 framesize = 2^14;
-framestep = 2^13;
+framestep = 2^10;
 Nmax = 2^18;
 
 xx = zeros((length(xE1) + framesize));
@@ -89,7 +89,7 @@ plot(t, zt_dB .- maximum(zt_dB),
 
 heatmap(t, f, 20*log10.(zz' .+ eps()), xlabel="Time (s)", ylabel="Frequency (Hz)", ylim=(0,1500))
 
-savefig("heatmap.png")
+savefig("ebass_heatmap.png")
 
 zmax = 20*log10.(maximum(zz));
 
@@ -100,4 +100,8 @@ anim = @animate for n=1:size(zz, 1)
         xlabel="Frequency (Hz)", ylabel="Power (dB)",
         title="Electric Bass (E1, 41 Hz), t=$(round(t[n]*10)/10) sec", legend=false)
 end
-gif(anim, "ebass.gif", fps=15)
+gif(anim, "ebass_15fps.gif", fps=15)
+
+gif(anim, "ebass_$(round(Int, fs/framestep))fps.gif", fps=round(Int, fs/framestep))
+
+fs/framestep
