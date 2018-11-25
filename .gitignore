@@ -2,3 +2,8 @@
 *.jl.*.cov
 *.jl.mem
 deps/deps.jl
+portaudio/portaudio
+portaudio/doc
+portaudio/_archive
+_archive
+.DS_Store
