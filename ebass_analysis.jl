@@ -3,11 +3,10 @@ using Plots
 pyplot();
 using Images
 
-using SampledSignals
-SampledSignals.embed_javascript();
-
 using FileIO: load, save, loadstreaming, savestreaming
 import LibSndFile
+using SampledSignals
+#SampledSignals.embed_javascript();
 
 using DSP
 using FFTW
@@ -105,5 +104,3 @@ gif(anim, "ebass_15fps.gif", fps=15)
 gif(anim, "ebass_$(round(Int, fs/framestep))fps.gif", fps=round(Int, fs/framestep))
 
 fs/framestep
-
-
